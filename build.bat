@@ -48,6 +48,7 @@ if errorlevel 1 (
     rmdir /Q /S tempNodeInstall
 ) else (
     echo Node.js is installed
+    npm install
     npm run make
     
     timeout -1
