@@ -43,6 +43,9 @@ if errorlevel 1 (
     echo "Rerun this script!"
     echo "If node is still not working, install it here => https://nodejs.org"
     @REM cmd.exe /k build.bat
+
+    cd.. 
+    rmdir /Q /S tempNodeInstall
 ) else (
     echo Node.js is installed
     npm run make

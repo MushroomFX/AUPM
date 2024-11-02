@@ -90,3 +90,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# build script temp folder
+tempNodeInstall/
