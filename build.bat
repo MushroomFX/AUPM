@@ -40,16 +40,26 @@ if errorlevel 1 (
 
     curl https://nodejs.org/dist/v22.11.0/node-v22.11.0-x64.msi -o node.msi
     msiexec /i node.msi /quiet
-    echo "Rerun this script!"
-    echo "If node is still not working, install it here => https://nodejs.org"
-    @REM cmd.exe /k build.bat
-
     cd.. 
     rmdir /Q /S tempNodeInstall
+
+    @echo off
+    echo.
+    echo.
+    echo.
+    echo Installed node!
+    echo Run this script again!
+    echo If node is still not working, install it here: https://nodejs.org
+
+    timeout -1
+
 ) else (
     echo Node.js is installed
     npm install
     npm run make
     
+    cd "out\make\squirrel.windows\x64"
+    "aupm-1.0.0 Setup.exe"
+
     timeout -1
 )
